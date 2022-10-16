@@ -1,0 +1,14 @@
+const System = require('dw/system/System');
+
+/**
+ * @description Dashboard Data
+ * @output Dashboard : Object
+ */
+function execute(pdict : PipelineDictionary) : Number {
+	// Dashboard Data
+	pdict.Dashboard = {
+        ENV: System.getInstanceType() === System.PRODUCTION_SYSTEM ? 'live' : 'test',
+    };
+
+	return PIPELET_NEXT;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<extensions xmlns="http://www.demandware.com/xml/bmmodules/2007-12-11" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.demandware.com/xml/bmmodules/2007-12-11 bmext.xsd">
+    <!-- SFCC DevTools Main Menu ( Business Manager ) -->
+    <menuitem id="developer-tools-site" position="1999" site="true">
+        <name xml:lang="x-default">Developer Tools</name>
+        <short_description xml:lang="x-default">
+            Developer Tools
+        </short_description>
+        <description xml:lang="x-default">
+            Tools that will help/speed up development.
+        </description>
+        <icon>icons/bm.png</icon>
+    </menuitem>
+
+    <!-- Dead Code Detector ( Business Manager ) -->
+    <menuaction id="dcd-dashboard" menupath="developer-tools-site" position="100" site="false">
+        <name xml:lang="x-default">Dead Code Detector</name>
+        <short_description xml:lang="x-default">
+            DCD Dashboard
+        </short_description>
+        <description xml:lang="x-default">
+            Dead Code Detector Dashboard
+        </description>
+        <exec pipeline="DCD" node="Dashboard"/>
+        <sub-pipelines>
+            <pipeline name="DCD-Dashboard" />
+        </sub-pipelines>
+        <parameters>
+            <parameter name="menuname" value="Developer Tools - Dead Code Detector"/>
+            <parameter name="mainmenuname" value="Developer Tools"/>
+        </parameters>
+        <icon>icons/dcd.png</icon>
+    </menuaction>
+</extensions>

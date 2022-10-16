@@ -1,0 +1,58 @@
+<isdecorate template="application/MenuFrame">
+<iscontent type="text/html" charset="UTF-8"></iscontent>
+
+<isscript>
+// Prevent Caching BM Static Assets on Non-Production to allow Developing this Dashboard
+var antiCache = dw.system.System.getInstanceType() !== dw.system.System.PRODUCTION_SYSTEM ? '?ac=' + new Date().getTime() : '';
+</isscript>
+
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/data-table.css' + antiCache)}">
+<link rel="stylesheet" href="${URLUtils.staticURL('/css/dashboard.css' + antiCache)}">
+
+<div class="sp-grid">
+    <div class="sp-row">
+        <div class="sp-container">
+            <div class="sp-cell" id="table-wrapper">
+                <table id="dcd-dashboard" class="hidden">
+                    <thead>
+                        <tr>
+                            <th data-type="date" data-format="DD.MM.YYY HH:MM:SS">Date</th>
+                            <iscomment> TODO: Add More Cells </iscomment>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <isloop items="${pdict.Orders}" var="order" status="orderStatus">
+                            <tr class="status-${order.validationStatus.toLowerCase()}">
+                                <iscomment> Date </iscomment>
+                                <td class="table_detail n">${order.creationDate}</td>
+
+                                <iscomment> TODO: Add More Cells </iscomment>
+                            </tr>
+                        </isloop>
+                    </tbody>
+                </table>
+
+                <iscomment> Download Buttons </iscomment>
+                <div id="export-buttons" class="hidden">
+                    <button class="csv" id="export-csv">Export CSV</button>
+                </div>
+            </div>
+        <iselse/>
+            <div id="welcome-dashboard">
+                <h1>Business Manager Dashboard</h1>
+                <h2>Use Search Bar Above to Get Started</h2>
+            </div>
+        </isif>
+
+            <div id="loading-dashboard">
+                <div class="lds-dual-ring"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>const DASHBOARD_SETTINGS = <isprint value="${JSON.stringify(pdict.Dashboard)}" encoding="off"/>;</script>
+<script src="${URLUtils.staticURL('/js/data-table.js' + antiCache)}"></script>
+<script src="${URLUtils.staticURL('/js/dashboard.js' + antiCache)}"></script>
+
+</isdecorate>

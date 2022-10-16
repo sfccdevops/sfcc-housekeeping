@@ -1,0 +1,121 @@
+#dcd-dashboard {
+    width: 100%;
+    font-size: 11px;
+    white-space: nowrap;
+    vertical-align: top;
+}
+#dcd-dashboard tr {
+    border-bottom: 1px solid gray;
+}
+#dcd-dashboard th.center {
+    text-align: center;
+}
+#dcd-dashboard th, #dcd-dashboard td {
+    text-align: left;
+    vertical-align: top;
+    vertical-align: middle;
+}
+#dcd-dashboard .right-align {
+    text-align: right;
+}
+#dcd-dashboard img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+#dcd-dashboard pre {
+    max-width: 500px;
+    overflow-x: scroll;
+    padding: 10px;
+    scrollbar-width: thin;
+    background: #FFF;
+    border-radius: 4px;
+}
+/* Fix for Layout Page to get Max Table Viewing */
+#bm_content_column {
+    padding: 18px 0 0;
+}
+#export-buttons {
+    position: absolute;
+    left: 10px;
+    width: 100px;
+    bottom: 13px;
+    height: 32px;
+    line-height: 32px;
+}
+#export-buttons.hidden, #dcd-dashboard.hidden, #dcd-dashboard pre.hidden {
+    display: none;
+}
+#table-wrapper {
+    position: relative;
+}
+button.csv {
+    appearance: none;
+    border: none;
+    background: #52504e;
+    color: white;
+    padding: 4px 8px;
+}
+#loading-dashboard {
+    min-height: calc(100vh - 165px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 123px;
+    left: 0;
+    background: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    z-index: 500;
+}
+#welcome-dashboard {
+    min-height: calc(100vh - 165px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 123px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+}
+#welcome-dashboard h1 {
+    font-size: 24px;
+    line-height: 34px;
+    padding: 0;
+    margin: 0;
+}
+#welcome-dashboard h2 {
+    color: #999;
+}
+.lds-dual-ring {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+}
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border-radius: 50%;
+    border: 6px solid #52504e;
+    border-color: #52504e transparent #52504e transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Override if DW Ease Extension Enabled */
+body[data-dwithease-toolbar="true"] #loading-dashboard,
+body[data-dwithease-toolbar="true"] #welcome-dashboard {
+    min-height: calc(100vh - 200px);
+    top: 152px;
+}
