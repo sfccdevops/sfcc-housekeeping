@@ -9,6 +9,6 @@ cartridges/sfcc_dev_console/webpack.config.js export-ignore
 cartridges/sfcc_dev_tools/webpack.config.js export-ignore
 package-lock.json export-ignore
 package.json export-ignore
-sfcc-dcd.code-workspace export-ignore
+sfcc-housekeeping.code-workspace export-ignore
 test export-ignore
 webpack.config.js export-ignore

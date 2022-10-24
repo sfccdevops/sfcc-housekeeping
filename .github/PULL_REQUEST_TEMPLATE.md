@@ -15,7 +15,7 @@ Checklist:
 
 > I have tested each of the following, and they work as expected: ( required )
 
-- [ ] Meets [Contributing Guide](https://github.com/sfccdevops/sfcc-dcd/blob/develop/.github/CONTRIBUTING.md) Requirements
+- [ ] Meets [Contributing Guide](https://github.com/sfccdevops/sfcc-housekeeping/blob/develop/.github/CONTRIBUTING.md) Requirements
 - [ ] Pulled in the Latest Code from the `develop` branch
 - [ ] Works on a Desktop / Laptop Device
 - [ ] `npm test` Does Not Generate Errors

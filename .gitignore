@@ -1,8 +1,9 @@
 !.nvmrc
-!cartridges/bm_dcd/**/static/**/css
-!cartridges/bm_dcd/**/static/**/js
-!cartridges/plugin_dcd/**/static/**/css
-!cartridges/plugin_dcd/**/static/**/js
-!sfcc-dcd.code-workspace
+!cartridges/bm_housekeeping/**/static/**/css
+!cartridges/bm_housekeeping/**/static/**/js
+!cartridges/plugin_housekeeping/**/static/**/css
+!cartridges/plugin_housekeeping/**/static/**/js
+!sfcc-housekeeping.code-workspace
+.env
 .idea/
 node_modules

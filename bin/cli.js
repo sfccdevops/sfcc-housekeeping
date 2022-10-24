@@ -2,24 +2,40 @@
 
 'use strict'
 
+// Import Environment Config from .env
+require('dotenv').config()
+
 const chalk = require('chalk')
-const debug = require('debug')('cli')
 const path = require('path')
 const yargs = require('yargs')
 
 const cli = yargs
   .scriptName('./bin/cli.js')
   .usage(`\n${chalk.cyan.bold('Usage:')} ${chalk.bold.green('./bin/cli.js')} <command> ${chalk.dim('--options')}`)
-  .command('*', 'Dead Code Detector')
-  .command('pref', 'Site Preference Audit', {
+  .example('./bin/cli.js dcd --log-dir=/path/to/logs', 'Dead Code Detector')
+  .command('dcd', 'Dead Code Detector', {
+    'log-dir': {
+      alias: 'o',
+      describe: 'Absolute Path to Log Directory',
+      type: 'string',
+      default: process.env.SFCC_LOG_DIR,
+    },
+  })
+  .example('./bin/cli.js pref --data-dir=/path/to/data', 'Meta Data Analyzer')
+  .command('meta', 'Meta Data Analyzer', {
     'data-dir': {
       alias: 'd',
       describe: 'Absolute Path to Data Directory',
       type: 'string',
+      default: process.env.SFCC_DATA_DIR,
+    },
+    'prod-dir': {
+      alias: 'p',
+      describe: 'Absolute Path to Production Data Directory',
+      type: 'string',
+      default: process.env.SFCC_PROD_DATA_DIR,
     },
   })
-  .example('./bin/cli.js', 'Dead Code Detector')
-  .example('./bin/cli.js pref --data-dir=/path/to/data', 'Site Preference Audit')
   .updateStrings({
     'Commands:': chalk.cyan('Commands:\n'),
     'Options:': chalk.cyan('Options:\n'),
@@ -32,15 +48,15 @@ const cli = yargs
   })
   .help('help')
   .alias('help', 'h')
-  .epilogue(`${chalk.bold.cyan('NEED MORE HELP ?')} https://bit.ly/sfcc-dcd-help`)
+  .epilogue(`${chalk.bold.cyan('NEED MORE HELP ?')} https://bit.ly/sfcc-housekeeping`)
   .wrap(85)
+  .demand(1)
   .strict()
   .version(false).argv
 
-const command = cli._[0] || 'dcd'
+const command = cli._[0]
 
 try {
-  debug(`Executing ${command}`)
   require(path.join(__dirname, 'cmd', `${command}.js`))(cli)
 } catch (err) {
   if (err.code === 'MODULE_NOT_FOUND') {

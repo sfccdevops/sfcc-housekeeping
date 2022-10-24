@@ -27,7 +27,7 @@ module.exports = () => {
   // Get the directory that contains the config file
   const rootDir = path.dirname(dwJSON)
 
-  debug(`SFCC Root: ${rootDir}`)
+  debug(`Found SFCC Root: ${rootDir}`)
 
   return rootDir
 }

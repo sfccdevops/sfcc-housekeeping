@@ -1,17 +1,17 @@
 {
-    "name": "@sfccdevops/sfcc-dcd",
+    "name": "@sfccdevops/sfcc-housekeeping",
     "version": "1.0.0",
     "description": "SFCC Dead Code Detector Cartridge",
-    "homepage": "https://github.com/sfccdevops/sfcc-dcd#readme",
+    "homepage": "https://github.com/sfccdevops/sfcc-housekeeping#readme",
     "author": "SFCC DevOps",
     "license": "MIT",
     "main": "./bin/cli.js",
     "scripts": {
-        "bin": "DEBUG=cli* ./bin/cli.js",
-        "bin:help": "./bin/cli.js help",
-        "bin:pref": "DEBUG=cli* ./bin/cli.js pref --data-dir $DATA_DIR",
+        "dcd": "./bin/cli.js dcd",
+        "help": "./bin/cli.js help",
         "lint": "eslint --ext .js ./",
         "lint:fix": "eslint --ext .js ./ --fix",
+        "meta": "./bin/cli.js meta",
         "test": "npm run -s lint"
     },
     "engines": {
@@ -32,10 +32,10 @@
     ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/sfccdevops/sfcc-dcd.git"
+        "url": "git+https://github.com/sfccdevops/sfcc-housekeeping.git"
     },
     "bugs": {
-        "url": "https://github.com/sfccdevops/sfcc-dcd/issues"
+        "url": "https://github.com/sfccdevops/sfcc-housekeeping/issues"
     },
     "browserslist": [
         "> 1%",
@@ -62,6 +62,7 @@
     "dependencies": {
         "chalk": "^4.1.2",
         "debug": "^4.3.4",
+        "dotenv": "^16.0.1",
         "fast-glob": "^3.2.11",
         "find-up": "^5.0.0",
         "node-notifier": "^10.0.1",

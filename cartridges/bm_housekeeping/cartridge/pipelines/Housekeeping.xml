@@ -22,7 +22,7 @@
       <simple-transition/>
       <node>
         <pipelet-node pipelet-name="Script" pipelet-set-identifier="bc_api">
-          <config-property key="ScriptFile" value="DCDDashboard.ds"/>
+          <config-property key="ScriptFile" value="Housekeeping.ds"/>
           <config-property key="Transactional" value="false"/>
           <key-binding alias="Dashboard" key="Dashboard"/>
         </pipelet-node>

@@ -1,5 +1,7 @@
-SFCC Dead Code Detector Cartridge
+SFCC Housekeeping Cartridge
 ===
+
+> Dead Code Detector & Meta Data Analyzer
 
 ## This is a Work in Progress
 
